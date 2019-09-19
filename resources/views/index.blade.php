@@ -5,17 +5,17 @@
 	<title>VZ-Portfolio</title>
      
 	  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-	  <meta name="keywords" content="Vidoviti Dobrivoje, Dobrivoje, Vidovnjak, Vidovnjak Dobrivoje " />
-	  <meta name="description" content="Vidoviti dobrivoje samo za Vas, pomaze ljudima da vode normalan i zivot kakav zasluzuju bez mesanja drugih ljudi i njihovih magija " />
+	  <meta name="keywords" content="" />
+	  <meta name="description" content="" />
 	  <link rel="shortcut icon" href="img/logo.ico" />
 	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
 		<link rel="stylesheet"  href="css/style.css">
 	  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	  <meta property="og:url" content="http://vidovitidobrivoje.com/" />
+	  <meta property="og:url" content="" />
 	   <meta property="og:type" content="website" />
-	   <meta property="og:title" content="Vidoviti Dobrivoje">
-	   <meta property="og:description" content="Vidoviti dobrivoje samo za Vas, pomaze ljudima da vode normalan i zivot kakav zasluzuju bez mesanja drugih ljudi i njihovih magija">
+	   <meta property="og:title" content="">
+	   <meta property="og:description" content="">
 	   <meta property="og:image" content="img/logo.jpg"/>
   		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
