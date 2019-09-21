@@ -228,6 +228,59 @@
 				</div>
 			</div>
 		</div>
+
+<!------ Include the above in your HEAD tag ---------->
+<div class="comments bg-light">
+	<h2 class="belo text-center">Comments</h2>
+<div class="container">
+  <div class="row">
+  	<div class="col-lg-1 col-md-12 col-sm-12"></div>
+  	<div class="col-lg-9 col-md-12 col-sm-12">      <div class="comment">
+      <a class="comment-img" href="#non">
+        <div class="img"></div>
+      </a>
+      <div class="comment-body">
+        <div class="text">
+          <p>if you are interested for  more about me visited my profile on social page</p>
+          <p>To visit me you can click my name  <a target="_blank" href="http://www.facebook.com/besnik.hetemii">Besnik Hetemi</a> and send me frends request or send me a message in inbox</p>
+        </div>
+        <p class="attribution">by <a href="#non">Besnik Hetemi</a> at 14:23pm, 4 Dec 2015</p>
+      </div>
+    </div>
+      <div class="comment">
+      <a class="comment-img" href="#non">
+ 		<div class="img"></div>      
+ 	</a>
+      <div class="comment-body">
+        <div class="text">
+          <p>if you are interested for  more about me visited my profile on social page</p>
+          <p>To visit me you can click my name  <a target="_blank" href="http://www.facebook.com/besnik.hetemii">Besnik Hetemi</a> and send me frends request or send me a message in inbox</p>
+        </div>
+        <p class="attribution">by <a href="#non">Besnik Hetemi</a> at 14:23pm, 4 Dec 2015</p>
+      </div>
+    </div>
+
+      <div class="comment">
+      <a class="comment-img" href="#non">
+ 		<div class="img"></div>      
+ 	</a>
+      <div class="comment-body">
+        <div class="text">
+          <p>if you are interested for  more about me visited my profile on social page</p>
+          <p>To visit me you can click my name  <a target="_blank" href="http://www.facebook.com/besnik.hetemii">Besnik Hetemi</a> and send me frends request or send me a message in inbox</p>
+        </div>
+        <p class="attribution">by <a href="#non">Besnik Hetemi</a> at 14:23pm, 4 Dec 2015</p>
+      </div>
+    </div>
+
+</div>
+  	<div class="col-lg-1 col-md-12 col-sm-12"></div>
+
+
+
+  </div>
+</div>
+  </div>
 </main>
 <footer>
 	<div class="container">
