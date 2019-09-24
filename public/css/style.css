@@ -12,7 +12,7 @@ nav{
 }
 nav  a{
 	color:#fff;
-	font-size:22px;
+	font-size:20px;
 	margin-left:15px;
 }
 nav  li a:hover{
@@ -65,14 +65,12 @@ h4{
 	background-color:rgba(0,0,0,0.7);
 	border-radius: 2px;
 }
-main{
-	padding-top:100px;
-}
+
 
 .p{
 
 	background-color:  #262626;
-	padding-top:120px;
+	padding-top:60px;
 	padding-bottom:120px;
 	
 }
@@ -262,12 +260,20 @@ h6{
 	
 }
 .belo{
-	color:#a1a1a1;
+	color: #1a1a1a;
 	font-size:37px;
 	padding-top:60px;
-	padding-bottom:40px;
+	padding-bottom:50px;
 
 }
+.belo1{
+	color:#fff;
+	font-size:37px;
+	
+	padding-bottom:50px;
+
+}
+
 .comment {
     overflow: hidden;
     padding: 0 0 1em;
@@ -344,9 +350,13 @@ h6{
 }
 
 .comment:hover:before {
-    background: orange;
+    background: #000;
 }
 
+.nav-link.active {
+  color:#333333 !important;
+  background-color:#fff !important;
+}
 .comment .text:before {
     top: 18px;
     left: 78px;

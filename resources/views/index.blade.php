@@ -20,9 +20,9 @@
   		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
 </head>
-<body>
+<body data-spy="scroll" data-target=".navbar">
 
-<nav class="navbar navbar-expand-lg border-bottom border-light fixed-top animated bounceInDown">
+<nav class="navbar navbar-expand-lg border-bottom border-light fixed-top animated bounceInDown" id="navbar-example2">
 	<div class="container">
   <a class="navbar-brand" href="#"><img src="img/logo.jpg" alt="logo"></a>
   <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,22 +30,41 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav ml-auto">
+    <ul class="navbar-nav m-auto nav-pills">
       <li class="nav-item">
-        <a class="nav-link" href="#">Home</a>
+        <a class="nav-link" href="#home">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Ratings</a>
+        <a class="nav-link" href="#about">About me</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#projects">Projects</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#new">New projects</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#contact">Contact</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#comment">Comments</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="#info">Info</a>
+      </li>    
 
     </ul>
-
+ <ul class="navbar-nav ml-auto">
+ 	 <li class="nav-item">
+        <a class="nav-link" href="#"> CV <i class="fa fa-download"></i></a>
+      </li>
+ </ul>
   </div>
   </div>
 </nav>
 
-<header class="text-center">
-	<div class="radi">
+<header class="text-center" id="home"> 
+	<div class="radi" >
 	<div class="opacity border border-light animated bounceInLeft">
 	<h1>Vuk Zdravkovic</h1><br>
 	<h2>Web Developer - Expert in Laravel <i class="fab fa-laravel"></i> / Bootstrap <i class="fab fa-bootstrap"></i></h2>
@@ -53,9 +72,11 @@
 	</div>
 </header>
 
-<main>
+<main data-spy="scroll" data-target="#navbar-example2" data-offset="0">
 	<a id="button"><i class="fa fa-arrow-up"></i></a>
-	<div class="container">
+	<div id="about"></div> 
+	<div class="container " >
+		<h2 class="belo text-center" >About me</h2>
 		<div class="row">
 			<div class="col-lg-6 col-md-6 text-center"><img src="img/ja.jpg" alt="Ja"></div>
 			<div class="col-lg-6 col-md-6 text-center">
@@ -81,8 +102,10 @@
 		</div>
 	</div>
 	<br><br><br><br>
+	<div id="projects"></div>
 	<div class="p">
-	<div class="container">
+	<div class="container " >
+		<h2 class="belo1 text-center" > Projects</h2>
 		<div class="row ">
 			<div class="col-lg-4 col-md-6 col-sm-6 pb-4 text-center">
 				<div class="hovereffect">	
@@ -167,13 +190,13 @@
 	    </div>
 	  </div>
 	</div>
-
+	<div id="new"></div>
 	<div class="novosti1">
-		<div class="container">
+		<div class="container " >
 			<div class="row"> 
 				<div class="col-lg-2 col-md-1"></div>
 				<div class="col-lg-8 col-md-10 novo ">
-					<h3 class="text-center pb-2">Keep up with new projects <i class="fas fa-paper-plane"></i></h3><br>
+					<h3 class="text-center pb-2 " >Keep up with new projects <i class="fas fa-paper-plane"></i></h3><br>
 					
 					<form action="" method="">
 						
@@ -193,7 +216,7 @@
 			</div>
 		</div>
 	</div>
-
+		<div  id="contact"></div>
 		<div class="slika">
 			<div class="pozadina">
 				<div class="container ">
@@ -202,7 +225,7 @@
 						<div class="col-lg-2 col-md-2 col-sm-12"></div>
 						<div class="col-lg-8 col-md-8 col-sm-12 kontis border border-light ">
 						<br>
-							<h4 class="text-center">Contant me <i class="fa fa-envelope"></i></h4>
+							<h4 class="text-center" >Contact me <i class="fa fa-envelope"></i></h4>
 						
 						<form action="" method="" class="pr-3 pl-3">
 						
@@ -230,8 +253,9 @@
 		</div>
 
 <!------ Include the above in your HEAD tag ---------->
-<div class="comments bg-light">
-	<h2 class="belo text-center">Comments</h2>
+<div id="comment"></div>
+<div class="comments bg-light" >
+	<h2 class="belo text-center" >Comments</h2>
 <div class="container">
   <div class="row">
   	<div class="col-lg-1 col-md-12 col-sm-12"></div>
@@ -242,9 +266,9 @@
       <div class="comment-body">
         <div class="text">
           <p>if you are interested for  more about me visited my profile on social page</p>
-          <p>To visit me you can click my name  <a target="_blank" href="http://www.facebook.com/besnik.hetemii">Besnik Hetemi</a> and send me frends request or send me a message in inbox</p>
+          <p>To visit me you can click my name   and send me frends request or send me a message in inbox</p>
         </div>
-        <p class="attribution">by <a href="#non">Besnik Hetemi</a> at 14:23pm, 4 Dec 2015</p>
+        <p class="attribution">by <span  data-toggle="tooltip" data-placement="bottom" title="vukzdravkovic69@gmail.com">Vuk Zdravkovic</span> at 14:23pm, 4 Dec 2015</p>
       </div>
     </div>
       <div class="comment">
@@ -254,9 +278,9 @@
       <div class="comment-body">
         <div class="text">
           <p>if you are interested for  more about me visited my profile on social page</p>
-          <p>To visit me you can click my name  <a target="_blank" href="http://www.facebook.com/besnik.hetemii">Besnik Hetemi</a> and send me frends request or send me a message in inbox</p>
+          <p>To visit me you can click my name   and send me frends request or send me a message in inbox</p>
         </div>
-        <p class="attribution">by <a href="#non">Besnik Hetemi</a> at 14:23pm, 4 Dec 2015</p>
+        <p class="attribution">by <a href="#non" class="who">Besnik Hetemi</a> at 14:23pm, 4 Dec 2015</p>
       </div>
     </div>
 
@@ -267,9 +291,9 @@
       <div class="comment-body">
         <div class="text">
           <p>if you are interested for  more about me visited my profile on social page</p>
-          <p>To visit me you can click my name  <a target="_blank" href="http://www.facebook.com/besnik.hetemii">Besnik Hetemi</a> and send me frends request or send me a message in inbox</p>
+          <p>To visit me you can click my name   and send me frends request or send me a message in inbox</p>
         </div>
-        <p class="attribution">by <a href="#non">Besnik Hetemi</a> at 14:23pm, 4 Dec 2015</p>
+        <p class="attribution">by <a href="#non" class="who">Besnik Hetemi</a> at 14:23pm, 4 Dec 2015</p>
       </div>
     </div>
 
@@ -282,7 +306,7 @@
 </div>
   </div>
 </main>
-<footer>
+<footer id="info">
 	<div class="container">
 		<div class="row text-light text-center ae"> 
 			<div class="col-lg-3 col-md-6 "><br><br><br><h6>Social networks <i class="fa fa-globe"></i> </h6>
