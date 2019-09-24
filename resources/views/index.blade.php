@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -256,6 +257,9 @@
 <div id="comment"></div>
 <div class="comments bg-light" >
 	<h2 class="belo text-center" >Comments</h2>
+		<div class="text-center">
+		<a href="/login"><button class="btn btn-outline-dark moze" >Post comment</button></a>
+	</div> <br><br>
 <div class="container">
   <div class="row">
   	<div class="col-lg-1 col-md-12 col-sm-12"></div>
@@ -268,7 +272,7 @@
           <p>if you are interested for  more about me visited my profile on social page</p>
           <p>To visit me you can click my name   and send me frends request or send me a message in inbox</p>
         </div>
-        <p class="attribution">by <span  data-toggle="tooltip" data-placement="bottom" title="vukzdravkovic69@gmail.com">Vuk Zdravkovic</span> at 14:23pm, 4 Dec 2015</p>
+        <p class="attribution">by <span class="font-weight-bold" data-toggle="tooltip" data-placement="bottom" title="vukzdravkovic69@gmail.com">Vuk Zdravkovic</span> at 14:23pm, 4 Dec 2015</p>
       </div>
     </div>
       <div class="comment">
@@ -280,7 +284,7 @@
           <p>if you are interested for  more about me visited my profile on social page</p>
           <p>To visit me you can click my name   and send me frends request or send me a message in inbox</p>
         </div>
-        <p class="attribution">by <a href="#non" class="who">Besnik Hetemi</a> at 14:23pm, 4 Dec 2015</p>
+ 		<p class="attribution">by <span  class="font-weight-bold" data-toggle="tooltip" data-placement="bottom" title="vukzdravkovic69@gmail.com">Vuk Zdravkovic</span> at 14:23pm, 4 Dec 2015</p>
       </div>
     </div>
 
@@ -293,9 +297,10 @@
           <p>if you are interested for  more about me visited my profile on social page</p>
           <p>To visit me you can click my name   and send me frends request or send me a message in inbox</p>
         </div>
-        <p class="attribution">by <a href="#non" class="who">Besnik Hetemi</a> at 14:23pm, 4 Dec 2015</p>
+        <p class="attribution">by <span class="font-weight-bold"  data-toggle="tooltip" data-placement="bottom" title="vukzdravkovic69@gmail.com">Vuk Zdravkovic</span> at 14:23pm, 4 Dec 2015</p>
       </div>
     </div>
+	<br><br>
 
 </div>
   	<div class="col-lg-1 col-md-12 col-sm-12"></div>

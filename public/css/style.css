@@ -256,7 +256,7 @@ h6{
 }
 
 .comments{
-	padding-bottom:120px;
+	padding-bottom:90px;
 	
 }
 .belo{
@@ -371,7 +371,6 @@ h6{
     -ms-transform: rotate(45deg);
     -o-transform: rotate(45deg);
 }​
-
 
 
 
@@ -538,3 +537,8 @@ h2{
 		font-size:16px;
 }
  }
+
+ .moze{
+	border-radius: 4px;
+	padding:10px 50px;
+}
