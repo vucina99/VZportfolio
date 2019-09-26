@@ -258,7 +258,7 @@
 <div class="comments bg-light" >
 	<h2 class="belo text-center" >Comments</h2>
 		<div class="text-center">
-		<a href="/login"><button class="btn btn-outline-dark moze" >Post comment</button></a>
+		<a href="/register"><button class="btn btn-outline-dark moze" >Post comment</button></a>
 	</div> <br><br>
 <div class="container">
   <div class="row">

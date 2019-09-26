@@ -1,10 +1,11 @@
-@extends('layouts.app')
+@extends('logreg')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
+        <div class="col-md-12 col-sm-12 col-lg-1"></div>
+        <div class="col-md-12 col-sm-12 col-lg-10">
+            <div class="card boja">
                 <div class="card-header">{{ __('Verify Your Email Address') }}</div>
 
                 <div class="card-body">
@@ -23,6 +24,7 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-12 col-sm-12 col-lg-1"></div>
     </div>
 </div>
 @endsection

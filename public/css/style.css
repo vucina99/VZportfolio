@@ -57,6 +57,10 @@ h4{
 	color:#fff;
 	font-size:40px;
 }
+.da{
+	padding-top:170px;
+	padding-bottom:100px;
+}
 .kontis{
 	background-color:rgba(255,255,255,0.3);
 }
@@ -223,8 +227,23 @@ footer{
 	background-color:  #262626;
 	
 }
+.boja{
+	background-color:  #262626;
+	color:#fff;
+}
+.btn-link{
+	color:#fff;
 
-
+}
+.btn-link:hover{
+	color:#fff;
+	text-decoration: none;
+}
+.card-header{
+	border-bottom: 1px solid #fff;
+	font-size: 23px;
+	text-align: center;
+}
 h6{
 	font-size:28px;
 	
@@ -303,7 +322,7 @@ h6{
     padding: 10px;
     border: 1px solid #e5e5e5;
     border-radius: 5px;
-    background: #fff;
+    background-color: #fff;
 }
 
 .comment .text p:last-child {
@@ -334,8 +353,8 @@ h6{
 
 .comments:before {
     width: 3px;
-    top: -20px;
-    bottom: -20px;
+    top: 20px;
+    bottom: 20px;
     background: rgba(0,0,0,0.1);
 }
 
@@ -372,7 +391,9 @@ h6{
     -o-transform: rotate(45deg);
 }​
 
-
+.nazad{
+	margin-top:200px ;
+}
 
 
 
