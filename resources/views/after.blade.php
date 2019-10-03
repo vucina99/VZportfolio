@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -56,10 +55,20 @@
 
     </ul>
  <ul class="navbar-nav ml-auto">
- 	 <li class="nav-item">
-        <a class="nav-link" href="/download"> CV <i class="fa fa-download"></i></a>
+	<li class="nav-item">
+                                  
+      <a  href="{{ route('logout') }}"
+         onclick="event.preventDefault();
+           document.getElementById('logout-form').submit();" class="dugme">
+             Logout <i class="fa fa-sign-out-alt"></i>
+       </a>
+
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+                  @csrf
+          </form>
+       </div>
       </li>
- </ul>
+     </ul>
   </div>
   </div>
 </nav>
@@ -79,8 +88,8 @@
 	<div class="container " >
 		<h2 class="belo text-center" >About me</h2>
 		<div class="row">
-			<div class="col-lg-6 col-md-6 text-center"> <br> <img src="img/ja.jpg" alt="Ja"></div>
-			<div class="col-lg-6 col-md-6 text-center"><br>
+			<div class="col-lg-6 col-md-6 text-center"><img src="img/ja.jpg" alt="Ja"></div>
+			<div class="col-lg-6 col-md-6 text-center">
 				<p>I’m a <strong>Front-end</strong> and <strong>Back-end</strong> developer from Serbia with 4 years of experience. I have a bachelor's degree in Computer Science. <br><br>
 
 				Over the last 4 years, I’ve worked on various projects - from basic HTML, custom Bootstrap themes, through to large projects in Laravel.<br><br>
@@ -274,6 +283,7 @@
 						  <input type="submit" class="btn btn-outline-light btn-lg " value="Send" >
 						   <input type="reset" class="btn btn-outline-light btn-lg " value="Reset" >
 					</form>
+					
 						<br><br>
 						</div>
 						<div class="col-lg-2 col-md-2 col-sm-12"></div>
@@ -286,13 +296,61 @@
 <div id="comment"></div>
 <div class="comments bg-light" >
 	<h2 class="belo text-center" >Comments</h2>
-		<div class="text-center">
-		<a href="/register"><button class="btn btn-outline-dark moze" >Post comment</button></a>
-	</div> <br><br>
+	<div class="text-center "> 
+	@if(!isset(Auth::User()->comment))
+		<form action="/comment" method="post">
+			@csrf
+			<div class="form-group usko">
+				  @if ($errors->any())
+						    <div class="alert alert-danger">
+						        <ul>
+						            @foreach ($errors->all() as $error)
+						                <li>{{ $error }}</li>
+						            @endforeach
+						        </ul>
+						    </div>
+						@endif
+						@if(Session::has('comment'))
+						<div class="alert alert-info">
+							{{ Session::get('comment') }}
+						 </div>
+						@endif
+
+				<textarea name="description" id="" cols="30" rows="10" class="form-control levo" placeholder="Your comment"></textarea>
+			</div>
+			<div class="text-center">
+			<div class="rating ">
+			    <input type="radio" id="star5" name="rating" value="5" class="d-hidden" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+			    
+			    <input type="radio" id="star4" name="rating" value="4"  class="d-hidden"/><label class = "full" for="star4" title=" 4 stars"></label>
+			    
+			    <input type="radio" id="star3" name="rating" value="3"  class="d-hidden"/><label class = "full" for="star3" title=" 3 stars"></label>
+			    
+			    <input type="radio" id="star2" name="rating" value="2"  class="d-hidden" / ><label class = "full" for="star2" title=" 2 stars"></label>
+			    
+			    <input type="radio" id="star1" name="rating" value="1" class="d-hidden" /><label class = "full" for="star1" title=" 1 star"></label>
+			    
+			</div></div> <br><br> <br>
+			  <button type="submit" class="btn btn-outline-dark">Post comment</button>
+			
+	
+		 </form>
+		@endif
+	 </div>
+
+ <br><br>
 <div class="container">
+	<div class="text-center">
+			    	@if(Session::has('deletecomm'))
+					<div class="alert alert-info">
+					{{ Session::get('deletecomm') }}
+						</div>
+					@endif 
+	</div>
   <div class="row">
   	<div class="col-lg-1 col-md-12 col-sm-12"></div>
-  	<div class="col-lg-9 col-md-12 col-sm-12">     
+  	<div class="col-lg-9 col-md-12 col-sm-12"> 
+   
   	@foreach($sve as $s)
   	 <div class="comment ">
       <a class="comment-img" href="#non">
@@ -308,18 +366,30 @@
 
           	@endfor</span> -
 
-          	{{$s->description}}{{$s->description}}{{$s->description}}</p>
+          	{{$s->description}}</p>
         </div>
-         
+         <div class="d-flex justify-content-between">
         	<div><p class="attribution">by <span class="font-weight-bold" data-toggle="tooltip" data-placement="bottom" title="{{$s->email}}">{{$s->name}}</span> {{$s->created_at}}</p>
         	</div>
-      
-        
+        	<div class="d-flex pt-2">
+        		@if($s->user_id === Auth::User()->id)
+        		<form action="/updatecomment/{{$s->id}}" method="get" class="pr-2">
+        			@csrf
+        			
+        			<input type="submit" value="Update" class="btn btn-sm btn-dark">
+        		</form>
+        		<form action="/deletecomment/{{$s->id}}" method="post">
+        			@csrf
+        			@method('DELETE')
+        			<input type="submit" value="Delete" class="btn btn-sm btn-outline-dark">
+        		</form>
+        		@endif
+        	</div>
+        </div>
         
       </div>
     </div>
     @endforeach
-
 
 	<br><br>
 
@@ -337,7 +407,7 @@
 		<div class="row text-light text-center ae"> 
 			<div class="col-lg-3 col-md-6 "><br><br><br><h6>Social networks <i class="fa fa-globe"></i> </h6>
 				<div class="mreze">
-							<a href="https://www.facebook.com/vuk.zdravkovic.9"><i class="fab fa-facebook-square"></i></a>
+				<a href="https://www.facebook.com/vuk.zdravkovic.9"><i class="fab fa-facebook-square"></i></a>
 					<a href="https://www.instagram.com/v.zdravkovic/"><i class="fab fa-instagram"></i></a>		
 						<a href="https://www.linkedin.com/in/vuk-zdravkovic-701703159/"><i class="fab fa-linkedin"></i></a>	
 				</div>

@@ -25,7 +25,12 @@
 
 <nav class="navbar navbar-expand-lg border-bottom border-light fixed-top animated bounceInDown" id="navbar-example2">
 	<div class="container">
+		@if(!Auth::check())
   <a class="navbar-brand" href="/"><img src="../img/logo.jpg" alt="logo"></a>
+  @endif
+  @if(Auth::check())
+  <a class="navbar-brand" href="/home"><img src="../img/logo.jpg" alt="logo"></a>
+  @endif
   <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
