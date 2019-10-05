@@ -25,8 +25,18 @@ class HomeController extends Controller
      */
     public function index()
     {
+        
         $sve = Comment::orderBy('id', 'desc')->paginate(4);
         return view('after',compact('sve'));
+      
+        
+    }
+
+
+    public function admin(){
+
+      return view('admin');
+
     }
 
     public function comment(Request $request){
