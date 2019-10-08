@@ -24,6 +24,8 @@ Route::post('/comment', 'HomeController@comment');
 Route::delete('/deletecomment/{id}', 'HomeController@deletecomment');
 Route::get('/updatecomment/{id}', 'HomeController@updatecomment');
 Route::patch('/insert/{id}', 'HomeController@insert');
-Route::get('admin-login', 'Auth\AdminLoginController@showLoginForm');
-Route::post('admin-login', ['as'=>'admin-login','uses'=>'Auth\AdminLoginController@login']);
-Route::get('admin-panel', 'Auth\AdminLoginController@index');
+
+
+
+
+

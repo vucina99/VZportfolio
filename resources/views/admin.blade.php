@@ -31,25 +31,21 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav m-auto nav-pills">
-      <li class="nav-item">
-        <a class="nav-link" href="#home">Add projects</a>
+
+<ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+        <a class="nav-link" href="/addprojects">Add projects</a>
       </li>
+
       <li class="nav-item">
-        <a class="nav-link" href="#about">Comments</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#projects">Users</a>
+        <a class="nav-link" href="/admin-login">Users-comments</a>
       </li>
   
-
-    </ul>
-<ul class="navbar-nav ml-auto">
 	<li class="nav-item">
                                   
       <a  href="{{ route('logout') }}"
          onclick="event.preventDefault();
-           document.getElementById('logout-form').submit();" class="dugme">
+           document.getElementById('logout-form').submit();" class="dugme nav-link">
              Logout <i class="fa fa-sign-out-alt"></i>
        </a>
 
@@ -63,7 +59,30 @@
   </div>
 </nav>
 
+<main> <br><br><br><br><br><br>
+  <div class="text-center"><h1 class="all">All users</h1></div> <br>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-2 col-md-1 col-sm-12"></div>
+      <div class="col-lg-8 col-md-10 col-sm-12">
+          <ul class="list-group">
+              @foreach($comments as $comm)
+              <li class="list-group-item d-flex justify-content-between pt-2 pb-0">
+              <p> {{$comm->email}}</p>
+              <div><form action="/deletecommentadmin/{{$comm->id}}" method="POST">
+                @csrf
+                @method('DELETE')
+                <input type="submit" class="btn btn-dark btn-sm" value="Delete"></form></div>
+              </li>
+              @endforeach
+              {{$comments->links()}}
+          </ul>
+      </div>
+      <div class="col-lg-2 col-md-1 col-sm-12"></div>
+    </div>
+  </div>
 
+</main>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>	

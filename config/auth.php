@@ -32,13 +32,6 @@ return [
 
         ],
 
-        'admin' => [
-
-            'driver' => 'session',
-
-            'provider' => 'admins',
-
-        ],
 
     ],
 
@@ -54,13 +47,7 @@ return [
 
         ],
 
-        'admins' => [
 
-            'driver' => 'eloquent',
-
-            'model' => App\Admin::class,
-
-        ]
 
     ],
 
@@ -80,17 +67,8 @@ return [
 
         ],
 
-        'admins' => [
+        
 
-            'provider' => 'admins',
-
-            'email' => 'auth.emails.password',
-
-            'table' => 'password_resets',
-
-            'expire' => 60,
-
-        ],
 
     ],
 
