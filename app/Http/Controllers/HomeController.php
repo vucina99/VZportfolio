@@ -83,6 +83,7 @@ class HomeController extends Controller
             'rating' => 'required|integer|max:5|min:1',
             
         ]);
+
         $comm = Comment::find($id);
         if($comm->user_id === Auth::User()->id){
         $comm->description = $request->description;
@@ -93,6 +94,9 @@ class HomeController extends Controller
              return redirect('/home');   
          }
     }
+
+
+
 
 
 }

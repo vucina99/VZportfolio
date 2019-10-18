@@ -25,7 +25,9 @@ Route::delete('/deletecomment/{id}', 'HomeController@deletecomment');
 Route::get('/updatecomment/{id}', 'HomeController@updatecomment');
 Route::patch('/insert/{id}', 'HomeController@insert');
 
-
-
-
+Route::get('/admin-dash', 'AdminController@index')->middleware('admin');
+Route::get('/allcoments', 'AdminController@comm')->middleware('admin');
+Route::delete('/deletecommentadmin/{id}', 'AdminController@delete')->middleware('admin');
+Route::post('/upload', 'AdminController@upload')->middleware('admin');
+Route::post('/dodaj', 'AdminController@dodaj')->middleware('admin');
 
