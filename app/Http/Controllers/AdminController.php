@@ -92,7 +92,7 @@ class AdminController extends Controller
         }
 
           
-         Session::flash('admin' , 'Success upload Admin!');
+         Session::flash('admin' , 'Success upload Admin!!');
           
          return back();          
     }else{
