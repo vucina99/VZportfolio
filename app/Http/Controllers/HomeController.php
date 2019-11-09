@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Comment;
+use App\Project;
 use Illuminate\Http\Request;
 use Auth;
 use Session;
@@ -27,7 +28,8 @@ class HomeController extends Controller
     {
         
         $sve = Comment::orderBy('id', 'desc')->paginate(4);
-        return view('after',compact('sve'));
+        $projekti = Project::orderBy('created_at', 'desc')->get();
+        return view('after',compact('sve', 'projekti'));
       
         
     }

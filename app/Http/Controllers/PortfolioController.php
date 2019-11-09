@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Mail\contantmail;
 use App\Mail\Newmail;
 use App\Newemail;
+use App\Project;
 use App\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -17,7 +18,8 @@ class PortfolioController extends Controller
 
     public function index(){
         $sve = Comment::orderBy('id', 'desc')->paginate(4);
-        return view('index',compact('sve'));
+        $projekti = Project::orderBy('created_at', 'desc')->get();
+        return view('index',compact('sve','projekti'));
     }
 
     public function download()

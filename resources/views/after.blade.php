@@ -44,82 +44,46 @@
 	<div class="container " >
 		<h2 class="belo1 text-center" > Projects</h2>
 		<div class="row ">
+			@foreach($projekti as $projekat)
 			<div class="col-lg-4 col-md-6 col-sm-6 pb-4 text-center">
 				<div class="hovereffect">	
-					<img src="img/slika.png" alt="" class="img-fluid" >
+					<img src="../storage/profile_img/{{$projekat->profile_img}}" alt="" class="img-fluid" >
 
 				        <div class="overlay">
-		           <h2 class="font-weight-bold">Blog website</h2>
-		           <a class="info" href="#" data-toggle="modal" data-target="#exampleModal2">Watch project</a>
+		           <h2 class="font-weight-bold">{{$projekat->name}}</h2>
+		           <a class="info" href="#" data-toggle="modal" data-target="#exampleModa{{$projekat->id}}">Watch project</a>
 		        </div>
 				</div>
 			</div>
-			<div class="col-lg-4 col-md-6 col-sm-6 pb-4 text-center">
-				<div class="hovereffect">	
-					<img src="img/slika.png" alt="" class="img-fluid" >
+			@endforeach
 
-				        <div class="overlay">
-		           <h2 class="font-weight-bold">Blog website</h2>
-		           <a class="info" href="#" data-toggle="modal" data-target="#exampleModal2">Watch project</a>
-		        </div>
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-6 col-sm-6 pb-4 text-center">
-				<div class="hovereffect">	
-					<img src="img/slika.png" alt="" class="img-fluid" >
-
-				        <div class="overlay">
-		           <h2 class="font-weight-bold">Blog website</h2>
-		           <a class="info" href="#" data-toggle="modal" data-target="#exampleModal2">Watch project</a>
-		        </div>
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-6 col-sm-6 pb-4 text-center">
-				<div class="hovereffect">	
-					<img src="img/slika.png" alt="" class="img-fluid" >
-
-				        <div class="overlay">
-		           <h2 class="font-weight-bold">Blog website</h2>
-		           <a class="info" href="#" data-toggle="modal" data-target="#exampleModal2">Watch project</a>
-		        </div>
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-6 col-sm-6 pb-4 text-center">
-				<div class="hovereffect">	
-					<img src="img/slika.png" alt="" class="img-fluid" >
-
-				        <div class="overlay">
-		           <h2 class="font-weight-bold">Blog website</h2>
-		           <a class="info" href="#" data-toggle="modal" data-target="#exampleModal2">Watch project</a>
-		        </div>
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-6 col-sm-6 pb-4 text-center">
-				<div class="hovereffect">	
-					<img src="img/slika.png" alt="" class="img-fluid" >
-
-				        <div class="overlay">
-		           <h2 class="font-weight-bold">Blog website</h2>
-		           <a class="info" href="#" data-toggle="modal" data-target="#exampleModal2">Watch project</a>
-		        </div>
-				</div>
-			</div>
 
 	</div>
 	</div>
 	</div>
 	<!-- Modal -->
-	<div class="modal fade  bd-example-modal-lg" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	@foreach($projekti as $projekat)
+	<div class="modal fade  bd-example-modal-lg" id="exampleModa{{$projekat->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	  <div class="modal-dialog modal-lg" role="document">
 	    <div class="modal-content">
 	      <div class="modal-header ">
-	        <h5 class="modal-title ml-auto" id="exampleModalLabel">Blog website</h5>
+	        <h5 class="modal-title ml-auto" id="exampleModalLabel">{{$projekat->name}}</h5>
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	          <span aria-hidden="true">&times;</span>
 	        </button>
 	      </div>
 	      <div class="modal-body text-center">
-	        Neki tekst o projektu koji ce se nalaziti sigurno na sredini svega
+	      	
+	       {!!$projekat->description!!} <br><br>
+	       @if(isset($projekat->video))
+	       	Video of project &nbsp; : &nbsp;<a href="{{$projekat->video}}" target="_blank"> click here</a>
+	       	@endif <br>
+	       @if(isset($projekat->git))
+	       	Github project &nbsp; : &nbsp; <a href="{{$projekat->git}}" target="_blank">  click here</a>
+	       	@endif <br>
+	       @if(isset($projekat->live))
+	       	Live project &nbsp; : &nbsp; <a href="{{$projekat->live}}" target="_blank"> click here</a>
+	       	@endif <br>
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -127,6 +91,8 @@
 	    </div>
 	  </div>
 	</div>
+	@endforeach
+
 	<div id="new"></div>
 	<div class="novosti1">
 		<div class="container " >
@@ -237,11 +203,7 @@
 						        </ul>
 						    </div>
 						@endif
-						@if(Session::has('comment'))
-						<div class="alert alert-info">
-							{{ Session::get('comment') }}
-						 </div>
-						@endif
+
 
 				<textarea name="description" id="" cols="30" rows="10" class="form-control levo" placeholder="Your comment"></textarea>
 			</div>
@@ -273,6 +235,11 @@
 					{{ Session::get('deletecomm') }}
 						</div>
 					@endif 
+											@if(Session::has('comment'))
+						<div class="alert alert-info">
+							{{ Session::get('comment') }}
+						 </div>
+						@endif
 	</div>
   <div class="row">
   	<div class="col-lg-1 col-md-12 col-sm-12"></div>
@@ -299,7 +266,7 @@
         	<div><p class="attribution">by <span class="font-weight-bold" data-toggle="tooltip" data-placement="bottom" title="{{$s->email}}">{{$s->name}}</span> {{$s->created_at}}</p>
         	</div>
         	<div class="d-flex pt-2">
-        		@if($s->user_id === Auth::User()->id)
+        		@if($s->user_id == Auth::User()->id)
         		<form action="/updatecomment/{{$s->id}}" method="get" class="pr-2">
         			@csrf
         			

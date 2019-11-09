@@ -21,6 +21,9 @@ nav  li a:hover{
     color:#333333;
     border-radius: 2px;
 }
+.modal-body a{
+    text-decoration: none;
+}
 header{
 
     background-image:url('../img/bg2.jpg');
@@ -78,7 +81,7 @@ h4{
 
     background-color:  #262626;
     padding-top:60px;
-    padding-bottom:120px;
+    padding-bottom:250px;
     
 }
 .p img{

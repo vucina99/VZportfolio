@@ -2,13 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Session;
-use Auth;
 use App\Comment;
-use App\User;
+use App\Jobs\SendEmailJob;
+use App\Mail\newprojectMail;
+use App\Newemail;
 use App\Project;
+use App\User;
+use Auth;
+use Illuminate\Http\Request;
 use Image;
+use Mail;
+use Session;
 class AdminController extends Controller
 {
     public function __construct()
@@ -66,7 +70,8 @@ class AdminController extends Controller
  
         //Resize image here
         $thumbnailpath = public_path('storage/profile_img/'.$filenametostore);
-        $img = Image::make($thumbnailpath)->resize(600, 30)->save($thumbnailpath);
+       
+        $img = Image::make($thumbnailpath)->resize(400, 220)->save($thumbnailpath);
 
      
           Project::create([
@@ -78,6 +83,15 @@ class AdminController extends Controller
           'live' => $request->live
 
          ]);
+
+        $project = Project::latest()->first();
+        $emails = Newemail::all();
+
+        foreach ($emails as $email) {
+          dispatch(new  SendEmailJob($email, $project));
+        }
+
+          
          Session::flash('admin' , 'Success upload Admin!');
           
          return back();          
